@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">	
+<script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	zoomEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Distance par rapport au soleil et taille des planetes"
+	},
+	axisX: {
+		title:"Distance au Soleil",
+		suffix: "Mkm",
+		minimum: 0.0	,
+		maximum: 10500,
+		gridThickness: 1
+	},
+	axisY:{
+		title: "",
+		suffix: "",
+		minimum: 0,
+		maximum: 2
+	},
+	data: [{
+		type: "bubble",
+		toolTipContent: "<b>{name}</b><br/>Distance: {x}Mkm <br/> Diamètre equatorial: {z}km",
+		dataPoints: [
+			{ x: 0.0, y: 1.0, z: 1392530, name:"Soleil" },
+			{ x: 57.9, y: 1.0, z: 4879, name:"Mercure" },
+			{ x: 108.2, y: 1.0, z: 12104, name:"Vénus" },
+			{ x: 149.6 , y: 1.0, z: 12756, name:"Terre" },
+			{ x: 227.9, y: 1.0, z: 6792, name:"Mars" },
+			{ x: 414.1, y: 1.0, z: 952, name:"Cérès" },
+			{ x: 778.4, y: 1.0, z: 142980, name:"Jupiter" },
+			{ x: 1431.0, y: 1.0, z: 120540, name:"Saturne" },
+			{ x: 2864.4, y: 1.0, z: 51120, name:"Uranus" },
+			{ x: 4509.5, y: 1.0, z: 49930, name:"Neptune" },
+			{ x: 5913.5, y: 1.0, z: 2390, name:"Pluton" },
+			{ x: 6452.5, y: 1.0, z: 1450, name:"Haumea" },
+			{ x: 6838.9, y: 1.0, z: 1420, name:"Makemake" },
+			{ x: 10123.1, y: 1.0, z: 2400, name:"Eris" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 600px; max-width: 100%; margin: 0px auto;"></div>
+<script src="canvasjs.min.js"></script>
+</body>
+</html>
